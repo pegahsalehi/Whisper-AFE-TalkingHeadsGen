@@ -95,8 +95,4 @@ This pipeline evaluates the lip-sync quality of Talking-Head videos using SyncNe
 
     The scores for each video will be saved in the `all_scores.txt` file. Each score represents the lip-sync accuracy for the corresponding video.
 
-## Notes
 
-- Make sure to install all necessary dependencies listed in the `requirements.txt` file.
-- The script assumes that the `run_pipeline.py` and `calculate_scores_real_videos.py` scripts are set up correctly in the SyncNet directory.
-- Ensure that the reference model (e.g., Wav2Lip) is correctly referenced during execution.
