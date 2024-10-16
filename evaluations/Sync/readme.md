@@ -1,6 +1,6 @@
 # SyncNet Evaluation (Lip Sync) Pipeline for Talking Head videos
 
-This repository contains a pipeline for evaluating lip-sync of Talking-Head videos. The evaluation is performed using SyncNet to calculate the synchronization between the generated videos and the reference audio model. 
+To evaluate the lip-sync quality of Talking-Head videos using SyncNet, which measures the synchronization between the generated videos and the reference audio, follow these steps: 
 
 ## Setup Instructions
 
