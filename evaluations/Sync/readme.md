@@ -1,6 +1,7 @@
-# SyncNet Evaluation (Lip Sync) Pipeline for Talking Head videos
+```markdown
+# SyncNet Evaluation (Lip Sync) Pipeline for Talking Head Videos
 
-To evaluate the lip-sync quality of Talking-Head videos using SyncNet, which measures the synchronization between the generated videos and the reference audio, follow these steps: 
+This pipeline evaluates the lip-sync quality of Talking-Head videos using SyncNet. The evaluation measures synchronization between generated videos and reference audio.
 
 ## Setup Instructions
 
@@ -12,82 +13,92 @@ To evaluate the lip-sync quality of Talking-Head videos using SyncNet, which mea
     git clone https://github.com/joonson/syncnet_python.git
     ```
 
-2. **Set up the environment:**
+2. **Set Up the Environment:**
 
-    It is recommended to set up a separate virtual environment for running the evaluation to avoid conflicts between SyncNet and other projects. To install the necessary dependencies and download the pre-trained models, follow these steps:
+    It is recommended to create a virtual environment to isolate dependencies:
 
     ```bash
     cd syncnet_python
     pip install -r requirements.txt
     sh download_model.sh
     ```
-3. **Evaluation scripts from Wav2Lip:**
 
-Copy the evaluation scripts from the [scores_LSE folder](https://github.com/Rudrabha/Wav2Lip/tree/master/evaluation/scores_LSE) (include all .py and .sh files) of the Wav2Lip repository to the `syncnet_python/` directory in your cloned repository.
+3. **Copy Wav2Lip Evaluation Scripts:**
 
-This will set up the necessary evaluation scripts for measuring lip-sync accuracy in your project.
+    Copy the evaluation scripts from the [scores_LSE folder](https://github.com/Rudrabha/Wav2Lip/tree/master/evaluation/scores_LSE) (include all `.py` and `.sh` files) of the Wav2Lip repository into the `syncnet_python/` directory of your cloned repository.
 
 4. **Prepare the Video Data:**
 
-    Organize your video data by placing all the `.mp4` files in a single directory, following this folder structure:
+    Organize all your video files in a single directory with `.mp4` files structured as follows:
 
     ```
-    video data root (Folder containing all videos)
-    ├── All .mp4 files
+    video_data_root/
+    ├── video1.mp4
+    ├── video2.mp4
+    └── video3.mp4
     ```
 
     Example path: `/path/to/video/data/root`
-
-
-
-
 
 ## Running the Evaluation Scripts
 
 1. **Navigate to the Evaluation Directory:**
 
-    Move back to the `syncnet_python` directory:
+    Move to the `syncnet_python` directory:
 
     ```bash
     cd /path/to/syncnet_python
     ```
 
-2. **Run following Evaluation Scripts:**
-    ```  
-import os
-import subprocess
+2. **Run the Evaluation Pipeline:**
 
-# Define the directory containing your video files
-video_dir = r'/home/host/pegah/evl/ER-NeRF'
+    Use the following Python script to evaluate all `.mp4` files in the specified directory. The script runs the pipeline for each video and calculates lip-sync scores.
 
-# Initialize or clear the output file
-with open('all_scores.txt', 'w') as f:
-    pass  # This will clear the file
+    ```python
+    import os
+    import subprocess
 
-# Get the list of all .mp4 files in the directory
-filenames = [file for file in os.listdir(video_dir) if file.endswith('.mp4')]
+    # Define the directory containing your video files
+    video_dir = r'/path/to/video/data/root'
 
-# Loop through each file and run the necessary Python scripts
-for eachfile in filenames:
-    videofile_path = os.path.join(video_dir, eachfile)
-    
-    # Run the pipeline script
-    subprocess.run(['python', 'run_pipeline.py', '--videofile', videofile_path, '--reference', 'wav2lip', '--data_dir', 'tmp_dir'])
+    # Initialize or clear the output file
+    with open('all_scores.txt', 'w') as f:
+        pass  # This will clear the file
 
-    # Capture the output of the scoring script
-    result = subprocess.run(
-        ['python', 'calculate_scores_real_videos.py', '--videofile', videofile_path, '--reference', 'wav2lip', '--data_dir', 'tmp_dir'],
-        capture_output=True, text=True
-    )
+    # Get the list of all .mp4 files in the directory
+    filenames = [file for file in os.listdir(video_dir) if file.endswith('.mp4')]
 
-    # Print the output for debugging
-    print(f"Output for {eachfile}:")
-    print(result.stdout)
+    # Loop through each file and run the necessary Python scripts
+    for eachfile in filenames:
+        videofile_path = os.path.join(video_dir, eachfile)
+        
+        # Run the pipeline script
+        subprocess.run(['python', 'run_pipeline.py', '--videofile', videofile_path, '--reference', 'wav2lip', '--data_dir', 'tmp_dir'])
 
-    # Write the results to the file
-    with open('all_scores.txt', 'a') as f:
-        f.write(f'Video: {eachfile}\n')
-        f.write(result.stdout)
-        f.write('-' * 50 + '\n')
+        # Capture the output of the scoring script
+        result = subprocess.run(
+            ['python', 'calculate_scores_real_videos.py', '--videofile', videofile_path, '--reference', 'wav2lip', '--data_dir', 'tmp_dir'],
+            capture_output=True, text=True
+        )
 
+        # Print the output for debugging
+        print(f"Output for {eachfile}:")
+        print(result.stdout)
+
+        # Write the results to the file
+        with open('all_scores.txt', 'a') as f:
+            f.write(f'Video: {eachfile}\n')
+            f.write(result.stdout)
+            f.write('-' * 50 + '\n')
     ```
+
+3. **Results:**
+
+    The scores for each video will be saved in the `all_scores.txt` file. Each score represents the lip-sync accuracy for the corresponding video.
+
+## Notes
+
+- Make sure to install all necessary dependencies listed in the `requirements.txt` file.
+- The script assumes that the `run_pipeline.py` and `calculate_scores_real_videos.py` scripts are set up correctly in the SyncNet directory.
+- Ensure that the reference model (e.g., Wav2Lip) is correctly referenced during execution.
+```
