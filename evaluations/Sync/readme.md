@@ -1,4 +1,3 @@
-```markdown
 # SyncNet Evaluation (Lip Sync) Pipeline for Talking Head Videos
 
 This pipeline evaluates the lip-sync quality of Talking-Head videos using SyncNet. The evaluation measures synchronization between generated videos and reference audio.
@@ -101,4 +100,3 @@ This pipeline evaluates the lip-sync quality of Talking-Head videos using SyncNe
 - Make sure to install all necessary dependencies listed in the `requirements.txt` file.
 - The script assumes that the `run_pipeline.py` and `calculate_scores_real_videos.py` scripts are set up correctly in the SyncNet directory.
 - Ensure that the reference model (e.g., Wav2Lip) is correctly referenced during execution.
-```
