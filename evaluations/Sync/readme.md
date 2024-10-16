@@ -33,6 +33,16 @@ To evaluate the lip-sync quality of Talking-Head videos using SyncNet, which mea
 
     Example path: `/path/to/video/data/root`
 
+
+3. **Lip-Sync Evaluation Setup:**
+
+To enable lip-sync evaluation using Wav2Lip, follow this step:
+
+Copy the evaluation scripts from the [scores_LSE folder](https://github.com/Rudrabha/Wav2Lip/tree/master/evaluation/scores_LSE) of the Wav2Lip repository to the `syncnet_python/` directory in your cloned repository.
+
+This will set up the necessary evaluation scripts for measuring lip-sync accuracy in your project.
+
+
 ## Running the Evaluation Scripts
 
 1. **Navigate to the Evaluation Directory:**
