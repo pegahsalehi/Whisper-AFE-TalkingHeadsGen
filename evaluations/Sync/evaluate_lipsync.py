@@ -1,9 +1,8 @@
-%cd /home/host/pegah/evl/syncnet_python
 import os
 import subprocess
 
 # Define the directory containing your video files
-video_dir = r'/home/host/pegah/evl/ER-NeRF'
+video_dir = r'/path/to/video/data/root'
 
 # Initialize or clear the output file
 with open('all_scores.txt', 'w') as f:
