@@ -1,0 +1,53 @@
+# BRISQUE (Blind/Referenceless Image Spatial Quality Evaluator)
+import cv2
+import numpy as np
+from PIL import Image
+from brisque import BRISQUE
+
+# Initialize BRISQUE object
+obj = BRISQUE(url=False)
+
+def evaluate_brisque_on_video(video_path):
+    # Open video file
+    cap = cv2.VideoCapture(video_path)
+    
+    # Check if video opened successfully
+    if not cap.isOpened():
+        print("Error: Could not open video.")
+        return
+    
+    frame_count = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))  # Get total number of frames
+    total_score = 0
+    processed_frames = 0
+
+    # Loop through all the frames of the video
+    while cap.isOpened():
+        ret, frame = cap.read()  # Capture frame-by-frame
+        
+        if not ret:
+            break  # Break the loop if no frame is captured
+        
+        # Convert frame (which is in BGR format) to RGB for BRISQUE
+        frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        
+        # Convert to PIL Image and then to numpy array
+        pil_image = Image.fromarray(frame_rgb)
+        frame_ndarray = np.asarray(pil_image)
+        
+        # Compute BRISQUE score for the frame
+        score = obj.score(img=frame_ndarray)
+        
+        # Accumulate score
+        total_score += score
+        processed_frames += 1
+
+    # Calculate the average BRISQUE score over all frames
+    avg_score = total_score / processed_frames if processed_frames > 0 else 0
+    print(f"Average BRISQUE score for the video: {avg_score}")
+
+    # Release the video capture object
+    cap.release()
+
+# Example usage
+video_path = "/path/to/mp4/video"
+evaluate_brisque_on_video(video_path)
