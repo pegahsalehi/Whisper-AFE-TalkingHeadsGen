@@ -1,4 +1,5 @@
 # BRISQUE (Blind/Referenceless Image Spatial Quality Evaluator)
+# pip install brisque
 import cv2
 import numpy as np
 from PIL import Image
