@@ -1,5 +1,6 @@
 # Comparing Audio Feature Extraction Models for Efficient Talking Portrait Synthesis
 
 
-[Watch the video on YouTube](https://youtube.com/shorts/7JtHSxRlSpE)
+[![Watch the video](https://img.youtube.com/vi/7JtHSxRlSpE/maxresdefault.jpg)](https://youtube.com/shorts/7JtHSxRlSpE)
+
 
