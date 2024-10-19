@@ -1,6 +1,6 @@
 # Comparing Audio Feature Extraction Models for Efficient Talking Portrait Synthesis
 
-## Self-driven Results Using the **RAD-NeRF** Method for Four Audio Feature Extraction (AFE) Models
+## Self-driven Results Using the RAD-NeRF Method for Four Audio Feature Extraction (AFE) Models
 
 [![Watch the video](https://img.youtube.com/vi/7JtHSxRlSpE/maxresdefault.jpg)](https://youtube.com/shorts/7JtHSxRlSpE)
 
