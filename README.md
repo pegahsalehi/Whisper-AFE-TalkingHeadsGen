@@ -3,7 +3,6 @@
 [![Watch the video](https://img.youtube.com/vi/7JtHSxRlSpE/maxresdefault.jpg)](https://youtube.com/shorts/7JtHSxRlSpE)
 
 
-[![Watch the video](https://img.youtube.com/vi/7JtHSxRlSpE/0.jpg)](https://youtube.com/shorts/7JtHSxRlSpE)
 
 
 
