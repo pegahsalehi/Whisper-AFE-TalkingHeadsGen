@@ -1,9 +1,6 @@
-# Comparing Audio Feature Extraction Models for Efficient Talking Portrait Synthesis
-
-## Compared of Four Different Audio Feature Extraction (AFE) Methods based on RAD-NeRF
+# Comparative Analysis of Audio Feature Extraction for Real-Time Talking Portrait Synthesis
 
 
-## Compared of Four Different Audio Feature Extraction (AFE) Methods based on ER-NeRF
 
 
 
