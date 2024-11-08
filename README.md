@@ -11,7 +11,7 @@
 
 ## Audio Feature Extraction (AFE)
 
-You should specify the type of audio feature when training and testing.
+You should specify the type of audio feature when training and testing framwork like: ER-Nerf and RAD-NeRF
 
 ### DeepSpeech
 
