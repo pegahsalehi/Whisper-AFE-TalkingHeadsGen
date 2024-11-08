@@ -21,19 +21,19 @@ To extract features with DeepSpeech, use the following command:
 
 ```bash
 python data_utils/deepspeech_features/extract_ds_features.py --input data/<name>.wav # save to data/
-
+```
 ### Wav2Vec
 You can also try to extract audio features via Wav2Vec, as used in RAD-NeRF:
 
 ```bash
 python data_utils/wav2vec.py --wav data/<name>.wav --save_feats # save to data/<name>_eo.npy
-
+```
 ### HuBERT
 In our test, the HuBERT extractor performs better for more languages, which has already been used in GeneFace.
 ```bash
 # Borrowed from GeneFace. English pre-trained.
 python data_utils/hubert.py --wav data/<name>.wav # save to data/<name>_hu.npy
-
+```
 This README template includes command examples and references to relevant projects. Replace `<name>` with the appropriate file name when using these commands. You can customize the links if required.
 
 ### whisper
