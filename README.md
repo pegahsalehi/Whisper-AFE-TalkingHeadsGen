@@ -7,6 +7,10 @@
 
 ![Diagram](assets/arch.png)
 
+(a) System architecture of the interactive child avatar, detailing the integration of key modules: (1) Listening,
+(2) STT, (3) Language Processing, (4) TTS, (5) AFE, (6) Frames Rendering, and (7) Audio Overlay. This setup
+simulates natural conversation, allowing the user to interact with the avatar as if communicating with a real person. (b)
+User interaction with the child avatar system.
 
 ## Result based on RAD-NeRF
 
