@@ -2,6 +2,7 @@
 
 [![arXiv](https://img.shields.io/badge/arXiv-2411.13209-b31b1b.svg)](https://arxiv.org/abs/2411.13209)
 
+[![MDPI](https://img.shields.io/badge/MDPI-10.3390%2Fapp9030059-blue)](https://www.mdpi.com/2504-2289/9/3/59)
 
 
 
