@@ -56,10 +56,21 @@ To extract features with Whisper, use the following command:
 ```bash
 python AFEs/whisper.py 
 ```
-
-
-
-
+### Citation
+---
+Please cite this paper in your publications if it helps your research:
+```
+@article{salehi2025comparative,
+  title={Comparative analysis of audio feature extraction for real-time talking portrait synthesis},
+  author={Salehi, Pegah and Sheshkal, Sajad Amouei and Thambawita, Vajira and Gautam, Sushant and Sabet, Saeed S and Johansen, Dag and Riegler, Michael A and Halvorsen, P{\aa}l},
+  journal={Big Data and Cognitive Computing},
+  volume={9},
+  number={3},
+  pages={59},
+  year={2025},
+  publisher={MDPI}
+}
+```
 
 
 
